@@ -1,0 +1,66 @@
+<!--components/test3/test3.wxml-->
+<!-- <text>components/test3/test3.wxml</text> -->
+<view style="background-color: rgb({{fullColor}});" class="colorBox">颜色值：{{fullColor}}</view>
+<view class="button-group">
+  <button
+    size="mini"
+    type="default"
+    bind:tap="increaseR"
+    bindlongpress="startIncreaseR"
+    bindtouchend="stopChange"
+  >
+    R+
+  </button>
+  <button
+    size="mini"
+    type="default"
+    bind:tap="decreaseR"
+    bindlongpress="startDecreaseR"
+    bindtouchend="stopChange"
+  >
+    R-
+  </button>
+</view>
+
+<view class="button-group">
+  <button
+    size="mini"
+    type="primary"
+    bind:tap="increaseG"
+    bindlongpress="startIncreaseG"
+    bindtouchend="stopChange"
+  >
+    G+
+  </button>
+  <button
+    size="mini"
+    type="primary"
+    bind:tap="decreaseG"
+    bindlongpress="startDecreaseG"
+    bindtouchend="stopChange"
+  >
+    G-
+  </button>
+</view>
+
+<view class="button-group">
+  <button
+    size="mini"
+    type="warn"
+    bind:tap="increaseB"
+    bindlongpress="startIncreaseB"
+    bindtouchend="stopChange"
+  >
+    B+
+  </button>
+  <button
+    size="mini"
+    type="warn"
+    bind:tap="decreaseB"
+    bindlongpress="startDecreaseB"
+    bindtouchend="stopChange"
+  >
+    B-
+  </button>
+</view>
+<!-- <view>{{_rgb.r}},{{_rgb.g}},{{_rgb.b}}</view> -->

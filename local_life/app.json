@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/message/message",
+    "pages/contact/contact",
+    "pages/shoplist/shoplist"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "本地生活",
+    "navigationBarBackgroundColor": "#2b4b6b"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/static/images/CRMEB-首页-线性.png",
+        "selectedIconPath": "/static/images/CRMEB-首页-面性.png"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "/static/images/CRMEB-消息设置-线性.png",
+        "selectedIconPath": "/static/images/CRMEB-消息设置-面性.png"
+      },
+      {
+        "pagePath": "pages/contact/contact",
+        "text": "联系我们",
+        "iconPath": "/static/images/CRMEB-一号通-线性.png",
+        "selectedIconPath": "/static/images/CRMEB-一号通-面性.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

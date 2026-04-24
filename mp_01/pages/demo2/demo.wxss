@@ -1,0 +1,10 @@
+/* pages/demo2/demo.wxss */
+view {
+	/* margin-bottom: 40rpx; */
+	/* background-color: lightblue; */
+}
+
+.box {
+	height: 2000rpx;
+	background-color: skyblue;
+}

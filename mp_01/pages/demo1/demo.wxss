@@ -1,0 +1,7 @@
+/* pages/demo1/demo.wxss */
+@import "/common/common.wxss";
+
+view {
+	text-align: center;
+	margin-bottom: 40rpx;
+}

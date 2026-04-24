@@ -1,0 +1,4 @@
+<!--pages/info/info.wxml-->
+<text>pages/info/info.wxml</text>
+<navigator style="margin: 40rpx; text-align: center;" open-type="navigateBack">后退</navigator>
+<button bind:tap="goBack">后退</button>

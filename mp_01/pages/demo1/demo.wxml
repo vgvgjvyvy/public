@@ -1,0 +1,48 @@
+<!--pages/demo1/demo.wxml-->
+<view style="text-align: center; margin: 40rpx;">{{info}}</view>
+<image style="width: 100%; padding: 0 40rpx; box-sizing: border-box;" src="{{imgSrc}}" mode="widthFix" />
+<view style="text-align: center; margin: 40rpx;">{{randomNum1 >= 5 ? '数字大于或等于5' : '数字小于5'}}</view>
+<view style="text-align: center;">{{randomNum2*100}}</view>
+<!-- 事件绑定 -->
+<button style=" margin: 40rpx auto;" type="primary" bind:tap="btnTapHandler">
+	按钮
+</button>
+<button style="margin-bottom: 40rpx;" type="primary" bind:tap="CountChange">
+	+1
+</button>
+<button style="margin-bottom: 40rpx;" type="primary" bind:tap="btnTap2" data-info="{{2}}">
+	+2
+</button>
+<input style="margin: 40rpx; padding: 10rpx; background-color: aquamarine; border-radius: 12rpx;" type="text" value="{{msg}}" bindinput="inputHandler" />
+<!-- 条件渲染 -->
+<view wx:if="{{type === 1}}">男</view>
+<view wx:elif="{{type === 2}}">女</view>
+<view wx:else>保密</view>
+<block wx:if="{{true}}">
+	<view>view1</view>
+	<view>view2</view>
+</block>
+<view hidden="{{!flag}}">条件为 true 的时候隐藏元素,否则显示</view>
+<view wx:if="{{flag}}">这是使用 wx:if 控制的元素</view>
+<!-- 列表渲染 -->
+<view wx:for="{{arr1}}" wx:key='index'>
+	索引是：{{index}}，item 项是：{{item}}
+</view>
+<view>----------------</view>
+<view wx:for="{{arr1}}" wx:for-index='idx' wx:for-item="itemName" wx:key='idx'>
+	索引是：{{idx}}，item 项是：{{itemName}}
+</view>
+<view>----------------</view>
+<view wx:for="{{userList}}" wx:key='id' class="username">{{item.name}}</view>
+
+<navigator style="margin-bottom: 40rpx; text-align: center;" url="/pages/demo2/demo" open-type="switchTab">导航到 demo2</navigator>
+<navigator style="margin-bottom: 40rpx; text-align: center;" url="/pages/info/info">导航到 info</navigator>
+
+<button bind:tap="goToDemo2">跳转到 demo2 页面</button>
+<button bind:tap="goToInfo">跳转到 info 页面</button>
+
+<navigator style="margin: 40rpx; text-align: center;" url="/pages/info/info?name=zs&age=20">跳转到 info 页面</navigator>
+<button bind:tap="goToInfo2">跳转到 info 页面</button>
+
+<view style="height: 2rpx;">
+</view>

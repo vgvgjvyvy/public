@@ -1,0 +1,13 @@
+/* components/test3/test3.wxss */
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+.colorBox{
+	line-height: 200rpx;
+	font-size: 24rpx;
+	color: white;
+	text-shadow: 0rpx 0rpx 2rpx #000;
+	text-align: center;
+}

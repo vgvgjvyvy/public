@@ -1,0 +1,84 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/list/list",
+    "pages/info/info",
+    "pages/demo1/demo",
+    "pages/demo2/demo",
+    "pages/home/home",
+    "pages/message/message"
+  ],
+  "preloadRule": {
+    "pages/message/message": {
+      "packages": [
+        "p1"
+      ],
+      "network": "all"
+    }
+  },
+  "subPackages": [
+    {
+      "root": "pkgA",
+      "name": "p1",
+      "pages": [
+        "pages/cat/cat",
+        "pages/dog/dog"
+      ]
+    },
+    {
+      "root": "pkgB",
+      "name": "p2",
+      "pages": [
+        "pages/apple/apple",
+        "pages/banana/banana"
+      ],
+      "independent": true
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#efefef",
+    "onReachBottomDistance": 50
+  },
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+        "pagePath": "pages/message/message",
+        "text": "message",
+        "iconPath": "/static/icons/CRMEB-葡萄-线性.png",
+        "selectedIconPath": "/static/icons/CRMEB-葡萄-面性.png"
+      },
+      {
+        "pagePath": "pages/demo2/demo",
+        "text": "demo2",
+        "iconPath": "/static/icons/CRMEB-桃子-线性.png",
+        "selectedIconPath": "/static/icons/CRMEB-桃子-面性.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "list",
+        "iconPath": "/static/icons/CRMEB-晴天-线性.png",
+        "selectedIconPath": "/static/icons/CRMEB-晴天-面性.png"
+      }
+    ]
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-button": "@vant/weapp/button/index",
+    "my-numbers": "/components/numbers/numbers",
+    "my-test1": "/components/test/test",
+    "my-test2": "/components/test2/test2",
+    "my-test3": "/components/test3/test3",
+    "my-test4": "/components/test4/test4",
+    "my-test5": "/components/test5/test5"
+  }
+}

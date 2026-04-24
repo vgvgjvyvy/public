@@ -1,0 +1,24 @@
+<!--pages/demo2/demo.wxml-->
+<text>pages/demo2/demo.wxml</text>
+<view>pages/demo2/demo.wxml哈喽</view>
+<view>pages/demo2/demo.wxml哈喽</view>
+
+<button bind:tap="getInfo">发起 GET 请求</button>
+<button bind:tap="postInfo">发起 POST 请求</button>
+
+<view style="margin: 40rpx; text-align: center;">count值是：{{count}}</view>
+<button bind:tap="addCount">+1</button>
+
+<view style="margin: 40rpx;" class="box"></view>
+
+<view style="text-align: center;">{{m1.toUpper(username)}}</view>
+<view style="text-align: center;">{{m2.toLower(country)}}</view>
+<my-test1></my-test1>
+
+<wxs src="../../utils/tools.wxs" module="m2"/>
+
+<wxs module="m1">
+	module.exports.toUpper = function (str) {
+		return str.toUpperCase()
+	}
+</wxs>
