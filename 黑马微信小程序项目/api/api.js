@@ -22,3 +22,11 @@ export const getFloorList = () => {
     method: "GET",
   });
 };
+
+// 获取分类列表数据
+export const getCateList = () => {
+  return request({
+    url: "/api/public/v1/categories",
+    method: "GET",
+  });
+};
