@@ -1,5 +1,10 @@
 <template>
   <view>
+    <!-- 搜索组件 -->
+    <view class="search-box">
+      <my-search @myClick="goToSearch"></my-search>
+    </view>
+
     <!-- 轮播图区域 -->
     <swiper
       :indicator-dots="true"
@@ -144,9 +149,22 @@
       });
     }
   };
+
+  // 跳转到搜索页面
+  const goToSearch = () => {
+    uni.navigateTo({
+      url: "/subpkg/search/search",
+    });
+  };
 </script>
 
 <style lang="scss" scoped>
+  .search-box {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+
   /* 轮播图区域 */
   swiper {
     height: 330rpx;

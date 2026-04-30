@@ -1,16 +1,17 @@
 import request from "@/utils/request.js";
+const baseURL = "/api/public/v1";
 
 // 获取轮播图数据
 export const getSwiperList = () => {
   return request({
-    url: "/api/public/v1/home/swiperdata",
+    url: baseURL + "/home/swiperdata",
     method: "GET",
   });
 };
 // 获取分类导航数据
 export const getNavList = () => {
   return request({
-    url: "/api/public/v1/home/catitems",
+    url: baseURL + "/home/catitems",
     method: "GET",
   });
 };
@@ -18,7 +19,7 @@ export const getNavList = () => {
 // 获取楼层的数据
 export const getFloorList = () => {
   return request({
-    url: "/api/public/v1/home/floordata",
+    url: baseURL + "/home/floordata",
     method: "GET",
   });
 };
@@ -26,7 +27,16 @@ export const getFloorList = () => {
 // 获取分类列表数据
 export const getCateList = () => {
   return request({
-    url: "/api/public/v1/categories",
+    url: baseURL + "/categories",
     method: "GET",
+  });
+};
+
+// 获取搜索结果列表数据
+export const getSearchResult = (data) => {
+  return request({
+    url: baseURL + "/goods/qsearch",
+    method: "GET",
+    data,
   });
 };

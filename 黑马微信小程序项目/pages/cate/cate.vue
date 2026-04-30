@@ -1,5 +1,8 @@
 <template>
   <view class="page">
+    <!-- 搜索组件 -->
+    <my-search @myClick="goToSearch"></my-search>
+
     <view class="scroll-view-container">
       <!-- 左侧滑动区域 -->
       <scroll-view
@@ -93,6 +96,13 @@
   const handleSubCategoryClick = (cid) => {
     uni.navigateTo({
       url: "/subpkg/goods_list/goods_list?cid=" + cid,
+    });
+  };
+
+  // 跳转到搜索页面
+  const goToSearch = () => {
+    uni.navigateTo({
+      url: "/subpkg/search/search",
     });
   };
 </script>
