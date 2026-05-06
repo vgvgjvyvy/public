@@ -40,3 +40,12 @@ export const getSearchResult = (data) => {
     data,
   });
 };
+
+// 获取商品列表搜索结果数据
+export const getGoodsList = (data) => {
+  return request({
+    url: baseURL + "/goods/search",
+    method: "GET",
+    data,
+  });
+};
