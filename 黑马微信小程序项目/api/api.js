@@ -49,3 +49,12 @@ export const getGoodsList = (data) => {
     data,
   });
 };
+
+// 获取商品详情数据
+export const getGoodsListDetail = (data) => {
+  return request({
+    url: baseURL + "/goods/detail",
+    method: "GET",
+    data,
+  });
+};
