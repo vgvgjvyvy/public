@@ -1,0 +1,19 @@
+{
+    "name":"@opendb/uni-stat-app-starttime-logs",
+    "version":"0.0.1",
+    "description":"uni-stat-app-starttime-logs",
+    "keywords":[
+        "单位时间内应用启动次数"
+    ],
+    "opendb":{
+        "title":"应用启动数据统计表",
+        "type":"collection",
+        "contributors":[
+            {
+                "name":"DCloud",
+                "email":"",
+                "homepage":"https://gitee.com/dcloud/opendb"
+            }
+        ]
+    }
+}

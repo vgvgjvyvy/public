@@ -1,0 +1,19 @@
+{
+    "name":"@opendb/uni-stat-app-channels",
+    "version":"0.0.2",
+    "description":"uni-stat-app-channels",
+    "keywords":[
+        "应用渠道表"
+    ],
+    "opendb":{
+        "title":"应用渠道表",
+        "type":"collection",
+        "contributors":[
+            {
+                "name":"DCloud",
+                "email":"",
+                "homepage":"https://gitee.com/dcloud/opendb"
+            }
+        ]
+    }
+}

@@ -1,5 +1,5 @@
 <template>
-  <view>
+  <view class="page-container">
     <!-- 轮播图区域 -->
     <swiper
       :indicator-dots="true"
@@ -40,6 +40,7 @@
 
     <rich-text :nodes="goods_info.goods_introduce"></rich-text>
 
+    <view class="height-box"></view>
     <!-- 商品导航组件区域 -->
     <view class="goods-nav">
       <uni-goods-nav
@@ -53,13 +54,15 @@
 </template>
 
 <script setup>
-  import { ref } from "vue";
+  import { ref, computed } from "vue";
   import { onLoad } from "@dcloudio/uni-app";
   import { getGoodsListDetail } from "@/api/api.js";
+  import { useCartStore } from "@/store/cart.js";
 
+  const cartStore = useCartStore();
   const goods_info = ref({});
 
-  const options = ref([
+  const options = computed(() => [
     {
       icon: "shop",
       text: "店铺",
@@ -67,7 +70,7 @@
     {
       icon: "cart",
       text: "购物车",
-      info: 2,
+      info: cartStore.totalCount,
     },
   ]);
 
@@ -125,13 +128,42 @@
       });
     }
   };
+
   const buttonClick = (e) => {
     console.log(e);
-    options.value[1].info++;
+    if (e.index === 0) {
+      // 将当前商品添加到购物车
+      cartStore.addToCart({
+        goods_id: goods_info.value.goods_id,
+        goods_name: goods_info.value.goods_name,
+        goods_price: goods_info.value.goods_price,
+        goods_small_logo: goods_info.value.pics?.[0]?.pics_big || "",
+        count: 1,
+      });
+      uni.showToast({
+        title: "加入购物车成功",
+        icon: "success",
+      });
+    } else if (e.index === 1) {
+      uni.showToast({
+        title: "立即购买",
+        icon: "success",
+      });
+    }
   };
 </script>
 
 <style lang="scss" scoped>
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .height-box {
+    flex: 1;
+  }
+
   swiper {
     height: 750rpx;
 
@@ -186,7 +218,9 @@
     left: 0;
     right: 0;
     background-color: #fff;
-    padding-bottom: constant(safe-area-inset-bottom); /* iOS < 11.2 */
-    padding-bottom: env(safe-area-inset-bottom); /* iOS >= 11.2 */
+    padding-bottom: constant(safe-area-inset-bottom);
+    /* iOS < 11.2 */
+    padding-bottom: env(safe-area-inset-bottom);
+    /* iOS >= 11.2 */
   }
 </style>

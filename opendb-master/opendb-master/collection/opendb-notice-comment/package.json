@@ -1,0 +1,17 @@
+{
+  "name": "@opendb/opendb-notice-comment",
+  "version": "0.0.1",
+  "description": "关于通知的评论",
+  "keywords": ["关于通知的评论"],
+  "opendb": {
+    "title": "关于通知的评论",
+    "type": "collection",
+    "contributors": [
+      {
+        "name": "DCloud",
+        "email": "service@dcloud.io",
+        "homepage": "https://gitee.com/dcloud/opendb"
+      }
+    ]
+  }
+}

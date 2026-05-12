@@ -1,0 +1,17 @@
+{
+  "name": "@opendb/uni-ad-adp-revenues",
+  "version": "0.0.1",
+  "description": "uni-ad-adp-revenues",
+  "keywords": ["广告位收益数据表"],
+  "opendb": {
+    "title": "广告位收益数据表",
+    "type": "collection",
+    "contributors": [
+      {
+        "name": "DCloud",
+        "email": "",
+        "homepage": "https://gitee.com/dcloud/opendb"
+      }
+    ]
+  }
+}

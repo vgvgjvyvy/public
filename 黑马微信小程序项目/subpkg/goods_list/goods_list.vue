@@ -5,7 +5,8 @@
         @click="goToDetail"
         v-for="item in goodsList"
         :key="item.goods_id"
-        :goods="item" />
+        :goods="item"
+        :click-target="'container'" />
     </view>
   </view>
 </template>
@@ -99,7 +100,7 @@
     });
   };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
   .goods-list {
     padding: 20rpx;
   }

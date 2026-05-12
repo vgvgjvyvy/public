@@ -1,0 +1,17 @@
+{
+  "name": "@opendb/opendb-mall-express",
+  "version": "0.0.1",
+  "description": "opendb-mall-express",
+  "keywords": ["电商系统", "快递运费模板"],
+  "opendb": {
+    "title": "电商快递运费模板",
+    "type": "collection",
+    "contributors": [
+      {
+        "name": "DCloud",
+        "email": "",
+        "homepage": "https://gitee.com/dcloud/opendb"
+      }
+    ]
+  }
+}
