@@ -1,0 +1,19 @@
+{
+    "name":"@opendb/uni-stat-page-details",
+    "version":"0.0.2",
+    "description":"uni-stat-page-details",
+    "keywords":[
+        "应用页面详情表"
+    ],
+    "opendb":{
+        "title":"应用页面详情表",
+        "type":"collection",
+        "contributors":[
+            {
+                "name":"DCloud",
+                "email":"",
+                "homepage":"https://gitee.com/dcloud/opendb"
+            }
+        ]
+    }
+}

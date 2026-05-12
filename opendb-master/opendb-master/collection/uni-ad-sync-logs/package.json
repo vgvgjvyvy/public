@@ -1,0 +1,17 @@
+{
+  "name": "@opendb/uni-ad-sync-logs",
+  "version": "0.0.1",
+  "description": "uni-ad-sync-logs",
+  "keywords": ["数据同步日志"],
+  "opendb": {
+    "title": "数据同步日志",
+    "type": "collection",
+    "contributors": [
+      {
+        "name": "DCloud",
+        "email": "",
+        "homepage": "https://gitee.com/dcloud/opendb"
+      }
+    ]
+  }
+}

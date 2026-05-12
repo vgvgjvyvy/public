@@ -48,7 +48,19 @@
           "style": {
             "navigationBarTitleText": "搜索"
           }
-        }
+		},
+		{
+			"path": "address_edit/address_edit",
+			"style": {
+				"navigationBarTitleText": "编辑地址"
+			}
+		},
+		{
+			"path": "address_list/address_list",
+			"style": {
+				"navigationBarTitleText": "地址列表"
+			}
+		}
       ]
     }
   ],

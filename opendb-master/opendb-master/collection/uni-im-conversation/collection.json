@@ -1,0 +1,241 @@
+{
+  "schema": {
+    "bsonType": "object",
+    "required": [],
+    "permission": {
+      "read": "doc.user_id == auth.uid",
+      "create": false,
+      "update": "doc.user_id == auth.uid",
+      "delete": false
+    },
+    "properties": {
+      "_id": {
+        "description": "ID，系统自动生成"
+      },
+      "id": {
+        "description": "会话ID，由会话双方用户的id按一定规律排序后的哈希值",
+        "bsonType": "string",
+        "permission": {
+          "write": false
+        }
+      },
+      "type": {
+        "description": "会话类型，区分：群聊和单聊",
+        "bsonType": "int",
+        "label": "",
+        "permission": {
+          "write": false
+        }
+      },
+      "user_id": {
+        "description": "所属用户id",
+        "bsonType": "string",
+        "permission": {
+          "write": false
+        }
+      },
+      "friend_uid": {
+        "description": "对话的好友的用户id",
+        "permission": {
+          "write": false
+        }
+      },
+      "group_id": {
+        "description": "对话的群id",
+        "permission": {
+          "write": false
+        }
+      },
+      "unread_count": {
+        "description": "未读消息数量",
+        "bsonType": "int",
+        "defaultValue": 0
+      },
+      "last_msg_note": {
+        "description": "最后一条消息概述（文本消息的前n个字，消息为多媒体时只描述类型）"
+      },
+      "update_time": {
+        "bsonType": "timestamp",
+        "description": "最后一次会话时间",
+        "defaultValue": {
+          "$env": "now"
+        }
+      }
+    }
+  },
+  "index": [
+    {
+      "IndexName": "id",
+      "MgoKeySchema": {
+        "MgoIndexKeys": [
+          {
+            "Name": "id",
+            "Direction": "1"
+          }
+        ],
+        "MgoIsUnique": false
+      }
+    },
+    {
+        "IndexName": "user_id_1",
+        "MgoKeySchema": {
+        "MgoIndexKeys": [{
+            "Name": "user_id",
+            "Direction": "1"
+        }],
+        "MgoIsUnique": false
+        }
+    },
+    {
+        "IndexName": "friend_uid_1",
+        "MgoKeySchema": {
+        "MgoIndexKeys": [{
+            "Name": "friend_uid",
+            "Direction": "-1"
+        }],
+        "MgoIsUnique": false
+        }
+    },
+    {
+        "IndexName": "group_id_1",
+        "MgoKeySchema": {
+        "MgoIndexKeys": [{
+            "Name": "group_id",
+            "Direction": "-1"
+        }],
+        "MgoIsUnique": false
+        }
+    },
+    {
+        "IndexName": "update_time_1",
+        "MgoKeySchema": {
+        "MgoIndexKeys": [{
+            "Name": "update_time",
+            "Direction": "-1",
+                    "Type": "long"
+        }],
+        "MgoIsUnique": false
+        }
+    },
+    {
+        "IndexName": "id_1_user_id_1",
+        "MgoKeySchema": {
+        "MgoIndexKeys": [{
+            "Name": "user_id",
+            "Direction": "-1"
+            },
+            {
+            "Name": "id",
+            "Direction": "-1"
+            }
+        ],
+        "MgoIsUnique": false
+        }
+    },
+    {
+        "IndexName": "id_1",
+        "MgoKeySchema": {
+        "MgoIndexKeys": [{
+            "Name": "id",
+            "Direction": "-1"
+        }],
+        "MgoIsUnique": false
+        }
+    },
+    {
+        "IndexName": "leave_1",
+        "MgoKeySchema": {
+        "MgoIndexKeys": [{
+            "Name": "leave",
+                    "Type": "bool",
+            "Direction": "-1"
+        }],
+        "MgoIsUnique": false
+        }
+    },
+    {
+        "IndexName": "unread_count_1",
+        "MgoKeySchema": {
+        "MgoIndexKeys": [{
+            "Name": "unread_count",
+            "Direction": "-1",
+                    "Type": "int"
+        }],
+        "MgoIsUnique": false
+        }
+    },
+    {
+        "IndexName": "leave_1",
+        "MgoKeySchema": {
+        "MgoIndexKeys": [{
+            "Name": "leave",
+                    "Type": "bool",
+            "Direction": "-1"
+        }],
+        "MgoIsUnique": false
+        }
+    },
+    {
+        "IndexName": "loadMoreConversation_1",
+        "MgoKeySchema": {
+        "MgoIndexKeys": [{
+            "Name": "user_id",
+            "Direction": "-1"
+            },
+            {
+            "Name": "pinned",
+                        "Type": "bool",
+            "Direction": "-1"
+            },
+            {
+            "Name": "leave",
+                        "Type": "bool",
+            "Direction": "-1"
+            },
+            {
+            "Name": "hidden",
+                        "Type": "bool",
+            "Direction": "-1"
+            },
+            {
+            "Name": "update_time",
+            "Direction": "-1",
+                        "Type": "long"
+            }
+        ],
+        "MgoIsUnique": false
+        }
+    },
+    {
+        "IndexName": "loadMoreConversation_2",
+        "MgoKeySchema": {
+        "MgoIndexKeys": [{
+            "Name": "user_id",
+            "Direction": "-1"
+            },
+            {
+            "Name": "pinned",
+                        "Type": "bool",
+            "Direction": "-1"
+            },
+            {
+            "Name": "leave",
+                        "Type": "bool",
+            "Direction": "-1"
+            },
+            {
+            "Name": "hidden",
+                        "Type": "bool",
+            "Direction": "-1"
+            },
+            {
+            "Name": "last_msg_create_time",
+            "Direction": "-1",
+                        "Type": "long"
+            }
+        ],
+        "MgoIsUnique": false
+      }
+    }
+  ]
+}

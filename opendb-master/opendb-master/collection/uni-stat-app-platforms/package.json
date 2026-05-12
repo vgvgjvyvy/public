@@ -1,0 +1,19 @@
+{
+    "name":"@opendb/uni-stat-app-platforms",
+    "version":"0.0.2",
+    "description":"uni-stat-app-platforms",
+    "keywords":[
+        "应用平台表"
+    ],
+    "opendb":{
+        "title":"应用平台表",
+        "type":"collection",
+        "contributors":[
+            {
+                "name":"DCloud",
+                "email":"",
+                "homepage":"https://gitee.com/dcloud/opendb"
+            }
+        ]
+    }
+}

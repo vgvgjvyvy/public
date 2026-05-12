@@ -1,0 +1,17 @@
+{
+  "name": "@opendb/opendb-mall-cart",
+  "version": "0.0.1",
+  "description": "opendb-mall-cart",
+  "keywords": ["电商系统", "购物车"],
+  "opendb": {
+    "title": "电商购物车",
+    "type": "collection",
+    "contributors": [
+      {
+        "name": "DCloud",
+        "email": "",
+        "homepage": "https://gitee.com/dcloud/opendb"
+      }
+    ]
+  }
+}

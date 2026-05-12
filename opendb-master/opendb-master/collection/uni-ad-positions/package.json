@@ -1,0 +1,17 @@
+{
+  "name": "@opendb/uni-ad-positions",
+  "version": "0.0.1",
+  "description": "uni-ad-positions",
+  "keywords": ["应用广告位"],
+  "opendb": {
+    "title": "应用广告位",
+    "type": "collection",
+    "contributors": [
+      {
+        "name": "DCloud",
+        "email": "",
+        "homepage": "https://gitee.com/dcloud/opendb"
+      }
+    ]
+  }
+}

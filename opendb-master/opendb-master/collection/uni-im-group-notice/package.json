@@ -1,0 +1,17 @@
+{
+  "name": "@opendb/uni-im-group-notice",
+  "version": "0.0.1",
+  "description": "uni-im-group-notice",
+  "keywords": ["即时通讯群公告"],
+  "opendb": {
+    "title": "通知",
+    "type": "collection",
+    "contributors": [
+      {
+        "name": "DCloud_JSON",
+        "email": "",
+        "homepage": ""
+      }
+    ]
+  }
+}

@@ -1,6 +1,9 @@
 // 基础配置
 const BASE_URL = "https://api-hmugo-web.itheima.net";
 
+// 请求计数器，用于处理并发请求
+let pendingRequestsCount = 0;
+
 // 请求拦截器
 const requestInterceptor = (options) => {
   // 可以在这里添加 token、修改 header 等
@@ -34,11 +37,15 @@ const responseInterceptor = (response) => {
 // 封装请求
 const request = async (options) => {
   try {
-    // 显示加载中提示
-    uni.showLoading({
-      title: "加载中...",
-      mask: true,
-    });
+    // 增加请求计数
+    pendingRequestsCount++;
+    // 只在第一个请求时显示加载中
+    if (pendingRequestsCount === 1) {
+      uni.showLoading({
+        title: "加载中...",
+        mask: true,
+      });
+    }
 
     // 执行请求拦截器
     const interceptedOptions = requestInterceptor(options);
@@ -47,11 +54,16 @@ const request = async (options) => {
     const response = await new Promise((resolve, reject) => {
       uni.request({
         ...interceptedOptions,
+        timeout: 10000, // 设置10秒超时
         success: (res) => resolve(res),
         fail: (err) => reject(new Error(err.errMsg || "网络请求失败")),
         complete: () => {
-          // 请求完成后关闭加载中
-          uni.hideLoading();
+          // 减少请求计数
+          pendingRequestsCount--;
+          // 只有当所有请求都完成时才关闭加载中
+          if (pendingRequestsCount === 0) {
+            uni.hideLoading();
+          }
         },
       });
     });

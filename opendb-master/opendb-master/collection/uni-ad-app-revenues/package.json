@@ -1,0 +1,17 @@
+{
+  "name": "@opendb/uni-ad-app-revenues",
+  "version": "0.0.1",
+  "description": "uni-ad-app-revenues",
+  "keywords": ["应用汇总日收益"],
+  "opendb": {
+    "title": "应用汇总日收益",
+    "type": "collection",
+    "contributors": [
+      {
+        "name": "DCloud",
+        "email": "",
+        "homepage": "https://gitee.com/dcloud/opendb"
+      }
+    ]
+  }
+}

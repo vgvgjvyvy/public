@@ -1,0 +1,17 @@
+{
+  "name": "@opendb/opendb-notice",
+  "version": "0.0.1",
+  "description": "opendb-notice",
+  "keywords": ["通知"],
+  "opendb": {
+    "title": "通知",
+    "type": "collection",
+    "contributors": [
+      {
+        "name": "DCloud_JSON",
+        "email": "",
+        "homepage": ""
+      }
+    ]
+  }
+}

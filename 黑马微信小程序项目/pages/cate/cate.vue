@@ -13,9 +13,9 @@
           :class="{ active: active === item.cat_id }"
           @click="handleCategoryClick(item.cat_id)"
           v-for="item in cateList"
-          :key="item.cat_id"
-          >{{ item.cat_name }}</view
-        >
+          :key="item.cat_id">
+          {{ item.cat_name }}
+        </view>
       </scroll-view>
 
       <!-- 右侧滑动区域 -->
@@ -54,6 +54,9 @@
   import { ref } from "vue";
   import { onLoad } from "@dcloudio/uni-app";
   import { getCateList } from "@/api/api.js";
+  import { useCartBadge } from "@/composables/useCartBadge.js";
+
+  useCartBadge();
 
   // 分类列表数据
   const cateList = ref([]);
