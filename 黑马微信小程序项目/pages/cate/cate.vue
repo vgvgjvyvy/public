@@ -193,7 +193,6 @@
     align-items: center;
     justify-content: center;
     padding-bottom: 30rpx;
-    margin-bottom: 20rpx;
 
     .title-line {
       flex: 1;
