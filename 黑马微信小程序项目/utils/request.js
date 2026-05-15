@@ -1,11 +1,22 @@
 // 基础配置
+import { useUserStore } from "@/store/user.js";
 const BASE_URL = "https://api-hmugo-web.itheima.net";
+const userStore = useUserStore(); // 获取 store 实例
 
 // 请求计数器，用于处理并发请求
 let pendingRequestsCount = 0;
 
 // 请求拦截器
 const requestInterceptor = (options) => {
+  // 确保 header 对象存在
+  if (!options.header) {
+    options.header = {};
+  }
+
+  if (options.url.indexOf("/my/") !== -1) {
+    options.header.Authorization = `Bearer ${userStore.token}`;
+  }
+
   // 可以在这里添加 token、修改 header 等
   return {
     ...options,

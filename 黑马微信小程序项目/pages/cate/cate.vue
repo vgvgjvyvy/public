@@ -28,7 +28,11 @@
           v-for="item in subCateList"
           :key="item.cat_id">
           <!-- 二级分类的标题 -->
-          <view class="cate-lv2-title">/{{ item.cat_name }}/</view>
+          <view class="cate-lv2-title">
+            <view class="title-line"></view>
+            <text class="title-text">{{ item.cat_name }}</text>
+            <view class="title-line"></view>
+          </view>
           <!-- 当前二级分类下的三级分类列表 -->
           <view class="cate-lv3-list">
             <view
@@ -37,11 +41,13 @@
               v-for="subItem in item.children"
               :key="subItem.cat_id">
               <!-- 三级分类的图片 -->
-              <image
-                :src="subItem.cat_icon"
-                mode="scaleToFill" />
+              <view class="icon-wrapper">
+                <image
+                  :src="subItem.cat_icon"
+                  mode="aspectFit" />
+              </view>
               <!-- 三级分类的文本 -->
-              <text>{{ subItem.cat_name }}</text>
+              <text class="item-name">{{ subItem.cat_name }}</text>
             </view>
           </view>
         </view>
@@ -130,7 +136,8 @@
   }
 
   .left-scroll-view {
-    width: 200rpx;
+    min-width: 200rpx;
+    max-width: 200rpx;
     // height: 100%; // 确保高度继承
   }
 
@@ -165,32 +172,90 @@
     }
   }
 
-  // 右侧列表样式
-  .cate-lv2-title {
-    font-size: 24rpx;
-    font-weight: bold;
-    text-align: center;
-    padding: 20rpx 0;
+  // 右侧滚动区域
+  .right-scroll-view {
+    flex: 1;
+    background-color: #f8f8f8;
+    padding: 20rpx;
   }
 
-  .cate-lv3-list {
+  .right-scroll-view-item {
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    padding: 30rpx 20rpx;
+    margin-bottom: 20rpx;
+    box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.05);
+  }
+
+  // 二级分类标题样式
+  .cate-lv2-title {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30rpx;
+    margin-bottom: 20rpx;
+
+    .title-line {
+      flex: 1;
+      height: 2rpx;
+      background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+    }
+
+    .title-text {
+      font-size: 28rpx;
+      font-weight: 600;
+      color: #333;
+      padding: 0 20rpx;
+      position: relative;
+    }
+  }
+
+  // 三级分类网格布局
+  .cate-lv3-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20rpx;
 
     .cate-lv3-item {
-      width: 33.33%;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding-bottom: 20rpx;
+      padding: 10rpx 8rpx;
+      background-color: #fafafa;
+      border-radius: 16rpx;
+      transition: all 0.3s ease;
 
-      image {
-        width: 120rpx;
-        height: 120rpx;
+      &:active {
+        transform: scale(0.95);
+        background-color: #f0f0f0;
       }
 
-      text {
+      .icon-wrapper {
+        width: 120rpx;
+        height: 120rpx;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 12rpx;
+        overflow: hidden;
+        background-color: #f5f5f5;
+
+        image {
+          width: 80rpx;
+          height: 80rpx;
+        }
+      }
+
+      .item-name {
         font-size: 24rpx;
+        color: #666;
+        text-align: center;
+        line-height: 1.4;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
   }

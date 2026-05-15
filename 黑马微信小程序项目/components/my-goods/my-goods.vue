@@ -182,6 +182,11 @@
     }
 
     .price {
+      display: inline-block;
+      max-width: 230rpx;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       font-size: 34rpx;
       font-weight: bold;
       color: #ff4400;

@@ -58,3 +58,21 @@ export const getGoodsListDetail = (data) => {
     data,
   });
 };
+
+// 获取token
+export const getToken = (data) => {
+  return request({
+    url: baseURL + "/users/wxlogin",
+    method: "POST",
+    data,
+  });
+};
+
+// 支付订单
+export const payOrder = (data) => {
+  return request({
+    url: baseURL + "/my/orders/create",
+    method: "POST",
+    data,
+  });
+};

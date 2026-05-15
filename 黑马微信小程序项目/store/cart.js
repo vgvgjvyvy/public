@@ -18,6 +18,11 @@ export const useCartStore = defineStore("cart", () => {
       .toFixed(2);
   });
 
+  // 获取已勾选的商品列表
+  const checkedGoods = computed(() => {
+    return cartList.value.filter(item => item.goods_state);
+  });
+
   // 计算已勾选商品的总数量（考虑每个商品的 count）
   const checkedCount = computed(() => {
     return cartList.value
@@ -103,6 +108,7 @@ export const useCartStore = defineStore("cart", () => {
     cartList,
     totalCount,
     totalPrice,
+    checkedGoods,
     checkedCount,
     isAllChecked,
     addToCart,
