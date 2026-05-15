@@ -1,11 +1,13 @@
 <template>
   <view>
-    <!-- #ifdef MP-WEIXIN -->
-    <my-login v-if="!token" />
-    <!-- #endif -->
-    <!-- #ifdef H5 -->
-    <my-login-h5 v-if="!token" />
-    <!-- #endif -->
+    <template v-if="!token">
+      <!-- #ifdef MP-WEIXIN -->
+      <my-login />
+      <!-- #endif -->
+      <!-- #ifdef H5 -->
+      <my-login-h5 />
+      <!-- #endif -->
+    </template>
     <my-userinfo v-else />
   </view>
 </template>
